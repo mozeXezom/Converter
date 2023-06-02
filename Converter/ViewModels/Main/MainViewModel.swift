@@ -9,7 +9,17 @@ import Foundation
 
 class MainViewModel {
     
+    var currencyModel: CurrencyModel?
+    
     func fetchData() {
-        
+        let decoder = JSONDecoder()
+        let defaults = UserDefaults.standard
+        guard let dataModel = defaults.value(forKey: Constans.dataSaveKey) as? Data else { return }
+        do {
+            let decodedData = try decoder.decode(CurrencyModel.self, from: dataModel)
+            self.currencyModel = decodedData
+        } catch {
+            print("Bad data")
+        }
     }
 }
