@@ -8,7 +8,6 @@
 import Foundation
 
 struct CurrencyModel: Codable {
-    
     let base_code: String
     var rates: [String: Double]
 }

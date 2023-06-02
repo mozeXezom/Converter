@@ -9,7 +9,7 @@ import Foundation
 
 struct Constans {
     static let baseUrl = "https://open.er-api.com/v6/latest/USD"
-    static let listTableView = "ListTableView"
+    static let listTableViewCell = "ListTableViewCell"
     static let converterVC = "converterVC"
     static let listVC = "listVC"
     static let dataSaveKey = "Data"

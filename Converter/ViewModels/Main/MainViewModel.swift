@@ -10,6 +10,7 @@ import Foundation
 class MainViewModel {
     
     var currencyModel: CurrencyModel?
+    var manager = CurrencyService()
     
     func fetchData() {
         let decoder = JSONDecoder()
@@ -22,4 +23,12 @@ class MainViewModel {
             print("Bad data")
         }
     }
+}
+
+extension MainViewModel: CurrencyServiceDelegate {
+    func didFailError(error: String) {
+        print(error)
+    }
+    
+    
 }
